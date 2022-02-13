@@ -16,6 +16,8 @@
   "rules": {
     "@next/next/no-img-element": "off",
     "require-jsdoc": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "quotes": [2, "double", { "avoidEscape": true }],
+    "semi": ["error", "never"]
   }
 }
