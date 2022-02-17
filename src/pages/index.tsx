@@ -1,13 +1,12 @@
 import type { NextPage } from "next"
-import Head from "next/head"
+import SEO from "src/components/common/SEO"
 import Hero from "src/components/modules/Desktop/Home/Hero"
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Aerolab Challenge</title>
-      </Head>
+      <SEO title={"Aerolab Challenge"} />
+
       <main>
         <Hero />
       </main>
