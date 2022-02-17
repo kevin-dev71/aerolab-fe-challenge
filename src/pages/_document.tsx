@@ -32,7 +32,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="description" content="Aerolab | Frontend challenge" />
+          <meta name="title" content="Aerolab | Frontend challenge"></meta>
           <link rel="icon" href="/favicon.svg" />
+          <meta name="keywords" content="aerolab, challenge, kevin" />
         </Head>
         <body>
           <Main />
