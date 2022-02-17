@@ -6,9 +6,9 @@ const AeropayDropDown = () => {
   return (
     <Wrapper>
       <PresentationalBit>
-        <Icon icon="aero-pay" width="32" height="32" alt="icon" />
+        <Icon icon="aero-pay" width="32" height="32" alt="Points: " />
         <Points>1000</Points>
-        <ChevronDefault icon="chevron-default" width="24" height="24" alt="icon" />
+        <ChevronDefault icon="chevron-default" width="24" height="24" alt="show more" />
       </PresentationalBit>
     </Wrapper>
   )

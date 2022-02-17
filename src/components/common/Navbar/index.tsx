@@ -6,7 +6,7 @@ import Image from "next/image"
 const Navbar = () => {
   return (
     <Wrapper>
-      <Image src={DesktopLogo.src} width="126" height="48" alt="icon" />
+      <Image src={DesktopLogo.src} width="126" height="48" alt="Aerolab" />
       <AeropayDropDown />
     </Wrapper>
   )
