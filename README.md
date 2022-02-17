@@ -9,3 +9,4 @@
 - husky precommiter
 
 ## Deploy (WIP)
+https://aerolab-fe-challenge.vercel.app/
