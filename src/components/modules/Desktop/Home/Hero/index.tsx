@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import singleWavePatternImg from "src/assets/images/single-wave-pattern.svg"
 import heroDesktopImg from "src/assets/images/hero-desktop.png"
-import { sectionBg } from "src/styles/constants/colors"
 import { L1 } from "src/components/modules/Desktop/Text"
 import { l1 as headingsL1Default } from "src/styles/constants/desktop/titles"
 import { l1AllCaps } from "src/styles/constants/desktop/texts"
-import { neutral600, brandGradient } from "src/styles/constants/colors"
+import { neutral600, brandGradient, sectionBg } from "src/styles/constants/colors"
 import { cssPropertiesToString } from "src/utils/cssPropertiesToString"
+import Button from "src/components/common/Button"
+import Icon from "src/components/common/Icon"
 
 const Hero = () => {
   return (
@@ -24,11 +25,17 @@ const Hero = () => {
               them for cool tech.
             </L1>
           </div>
+          <HeroButton>
+            <span>
+              VIEW ALL PRODUCTS <Icon icon="arrow-down" style={{ marginLeft: "12.5px" }} />
+            </span>
+          </HeroButton>
         </HeroTitleContainer>
         <HeroImageContainer>
           <HeroImage src={heroDesktopImg.src} alt="Image" width="897" height="795" />
         </HeroImageContainer>
       </Container>
+      <WaltkthroughSection>a</WaltkthroughSection>
     </Wrapper>
   )
 }
@@ -74,10 +81,24 @@ const HeroTitleContainer = styled.div`
       background: ${brandGradient};
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
+      background-clip: text;
     }
     &:nth-child(2),
     &:nth-child(3) {
       ${cssPropertiesToString(headingsL1Default)}
     }
   }
+`
+
+const HeroButton = styled(Button)`
+  margin-top: 64px;
+  span {
+    vertical-align: middle;
+    margin-right: 9.25px;
+  }
+`
+const WaltkthroughSection = styled.section`
+  background: ${sectionBg};
+  margin-top: 228px;
+  height: 528px;
 `
