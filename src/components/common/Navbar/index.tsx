@@ -16,4 +16,6 @@ export default Navbar
 const Wrapper = styled.nav`
   display: flex;
   padding: 40px 0;
+  max-width: 1464px;
+  margin: 0 auto;
 `

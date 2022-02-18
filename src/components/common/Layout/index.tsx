@@ -10,7 +10,4 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
   )
 }
 
-const Container = styled.main`
-  width: 76.25%;
-  margin: 0 auto;
-`
+const Container = styled.main``

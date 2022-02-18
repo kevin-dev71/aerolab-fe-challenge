@@ -11,36 +11,40 @@ import { cssPropertiesToString } from "src/utils/cssPropertiesToString"
 const Hero = () => {
   return (
     <Wrapper>
-      <HeroTitleContainer>
-        <h1>
-          <span>EXPLORE THE</span>
-          <span>TECH </span>
-          <span>ZONE</span>
-        </h1>
-        <div style={{ maxWidth: "523px" }}>
-          <L1 color={neutral600}>
-            Here{" you’ll "}be able to exchange all of your hard-earned Aeropoints and exchange them
-            for cool tech.
-          </L1>
-        </div>
-      </HeroTitleContainer>
-      <HeroImageContainer>
-        <HeroImage src={heroDesktopImg.src} alt="Image" width="897" height="795" />
-      </HeroImageContainer>
+      <Container>
+        <HeroTitleContainer>
+          <h1>
+            <span>EXPLORE THE</span>
+            <span>TECH </span>
+            <span>ZONE</span>
+          </h1>
+          <div style={{ maxWidth: "523px" }}>
+            <L1 color={neutral600}>
+              Here{" you’ll "}be able to exchange all of your hard-earned Aeropoints and exchange
+              them for cool tech.
+            </L1>
+          </div>
+        </HeroTitleContainer>
+        <HeroImageContainer>
+          <HeroImage src={heroDesktopImg.src} alt="Image" width="897" height="795" />
+        </HeroImageContainer>
+      </Container>
     </Wrapper>
   )
 }
 export default Hero
 
 const Wrapper = styled.section`
-  display: flex;
   background-image: url(${singleWavePatternImg.src});
   margin-top: 73px;
-  /* width: 100vw; */
-  /* margin-left: calc(50% - 50vw); */
-
-  /* height: 100vh; */
 `
+
+const Container = styled.div`
+  display: flex;
+  max-width: 1464px;
+  margin: 0 auto;
+`
+
 const HeroImageContainer = styled.div`
   position: relative;
   background: ${sectionBg};
