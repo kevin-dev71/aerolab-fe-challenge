@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import singleWavePatternImg from "src/assets/images/single-wave-pattern.svg"
+// import singleWavePatternImg from "src/assets/images/single-wave-pattern.svg"
 import heroDesktopImg from "src/assets/images/hero-desktop.png"
 import walkthoughtImg1 from "src/assets/images/walkthroug-1-desktop.png"
 import walkthoughtImg2 from "src/assets/images/walkthroug-2-desktop.png"
@@ -94,7 +94,7 @@ const Hero = () => {
 export default Hero
 
 const Wrapper = styled.section`
-  background-image: url(${singleWavePatternImg.src});
+  background-image: url("/images/single-wave-pattern.svg");
   margin-top: 73px;
 `
 
