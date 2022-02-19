@@ -21,79 +21,83 @@ import {
 import { cssPropertiesToString } from "src/utils/cssPropertiesToString"
 import Button from "src/components/common/Button"
 import Icon from "src/components/common/Icon"
+import ProductsSection from "src/components/modules/Desktop/Home/ProductsSection"
 
 const Hero = () => {
   return (
-    <Wrapper>
-      <Container>
-        <HeroTitleContainer>
-          <h1>
-            <span>EXPLORE THE</span>
-            <span>TECH </span>
-            <span>ZONE</span>
-          </h1>
-          <div style={{ maxWidth: "523px" }}>
-            <L1 color={neutral600}>
-              Here{" you’ll "}be able to exchange all of your hard-earned Aeropoints and exchange
-              them for cool tech.
-            </L1>
-          </div>
-          <HeroButton>
-            <span>
-              VIEW ALL PRODUCTS <Icon icon="arrow-down" style={{ marginLeft: "12.5px" }} />
-            </span>
-          </HeroButton>
-        </HeroTitleContainer>
-        <HeroImageContainer>
-          <HeroImage src={heroDesktopImg.src} alt="Image" width="897" height="795" />
-        </HeroImageContainer>
-      </Container>
-      <WaltkthroughSection>
-        <WaltkthroughList>
-          <li>
-            <div className="top-card">
-              <img src={walkthoughtImg1.src} alt="" />
+    <>
+      <BackgroundWrapper>
+        <Container>
+          <HeroTitleContainer>
+            <h1>
+              <span>EXPLORE THE</span>
+              <span>TECH </span>
+              <span>ZONE</span>
+            </h1>
+            <div style={{ maxWidth: "523px" }}>
+              <L1 color={neutral600}>
+                Here{" you’ll "}be able to exchange all of your hard-earned Aeropoints and exchange
+                them for cool tech.
+              </L1>
             </div>
-            <footer className="bottom-card">
-              <BottomCardTitle>
-                <IconWrapper icon="walkthrough-1" />
-                <h2>1&#8212;BROWSE</h2>
-              </BottomCardTitle>
-              <p>Browse our tech catalog with more than 20 top tech products</p>
-            </footer>
-          </li>
-          <li>
-            <div className="top-card">
-              <img src={walkthoughtImg2.src} alt="" />
-            </div>
-            <footer className="bottom-card">
-              <BottomCardTitle>
-                <IconWrapper icon="walkthrough-2" />
-                <h2>2&#8212;CHOOSE</h2>
-              </BottomCardTitle>
-              <p>Exchange your hard earned AeroPoints for the item you want</p>
-            </footer>
-          </li>
-          <li>
-            <div className="top-card">
-              <img src={walkthoughtImg3.src} alt="" />
-            </div>
-            <footer className="bottom-card">
-              <BottomCardTitle>
-                <IconWrapper icon="walkthrough-3" />
-                <h2>3&#8212;ENJOY</h2>
-              </BottomCardTitle>
-              <p>All done, you can relax! We’ll take care of delivery of your tech item!</p>
-            </footer>
-          </li>
-        </WaltkthroughList>
-      </WaltkthroughSection>
-    </Wrapper>
+            <HeroButton>
+              <span>
+                VIEW ALL PRODUCTS <Icon icon="arrow-down" style={{ marginLeft: "12.5px" }} />
+              </span>
+            </HeroButton>
+          </HeroTitleContainer>
+          <HeroImageContainer>
+            <HeroImage src={heroDesktopImg.src} alt="Image" width="897" height="795" />
+          </HeroImageContainer>
+        </Container>
+        <WaltkthroughSection>
+          <WaltkthroughList>
+            <li>
+              <div className="top-card">
+                <img src={walkthoughtImg1.src} alt="" />
+              </div>
+              <footer className="bottom-card">
+                <BottomCardTitle>
+                  <IconWrapper icon="walkthrough-1" />
+                  <h3>1&#8212;BROWSE</h3>
+                </BottomCardTitle>
+                <p>Browse our tech catalog with more than 20 top tech products</p>
+              </footer>
+            </li>
+            <li>
+              <div className="top-card">
+                <img src={walkthoughtImg2.src} alt="" />
+              </div>
+              <footer className="bottom-card">
+                <BottomCardTitle>
+                  <IconWrapper icon="walkthrough-2" />
+                  <h3>2&#8212;CHOOSE</h3>
+                </BottomCardTitle>
+                <p>Exchange your hard earned AeroPoints for the item you want</p>
+              </footer>
+            </li>
+            <li>
+              <div className="top-card">
+                <img src={walkthoughtImg3.src} alt="" />
+              </div>
+              <footer className="bottom-card">
+                <BottomCardTitle>
+                  <IconWrapper icon="walkthrough-3" />
+                  <h3>3&#8212;ENJOY</h3>
+                </BottomCardTitle>
+                <p>All done, you can relax! We’ll take care of delivery of your tech item!</p>
+              </footer>
+            </li>
+          </WaltkthroughList>
+        </WaltkthroughSection>
+      </BackgroundWrapper>
+      <ProductsSection />
+    </>
   )
 }
 export default Hero
 
-const Wrapper = styled.section`
+const BackgroundWrapper = styled.section`
   background-image: url("/images/single-wave-pattern.svg");
   margin-top: 73px;
 `
@@ -166,7 +170,7 @@ const WaltkthroughList = styled.ol`
     position: absolute;
     background-color: ${neutral0};
     padding: 12px;
-    width: 508px;
+    width: 532px;
     border: 1px solid #dae4f2;
     border-radius: 32px;
     box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.05);
@@ -220,7 +224,7 @@ const IconWrapper = styled(Icon)`
 const BottomCardTitle = styled.div`
   display: flex;
   align-items: center;
-  h2 {
+  h3 {
     margin: 0;
     background: ${brandGradient};
     -webkit-text-fill-color: transparent;
