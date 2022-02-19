@@ -106,6 +106,7 @@ const Container = styled.div`
   display: flex;
   max-width: 1464px;
   margin: 0 auto;
+  padding-top: 36px;
 `
 
 const HeroImageContainer = styled.div`
@@ -155,7 +156,7 @@ const HeroButton = styled(Button)`
 `
 const WaltkthroughSection = styled.section`
   background: ${sectionBg};
-  margin-top: 228px;
+  margin-top: 234px;
   height: 528px;
   position: relative;
 `
