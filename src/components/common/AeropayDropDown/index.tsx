@@ -6,9 +6,9 @@ const AeropayDropDown = () => {
   return (
     <Wrapper>
       <PresentationalBit>
-        <Icon icon="aero-pay" width="32" height="32" alt="Points: " />
+        <Icon icon="aero-pay" width="32" height="32" />
         <Points>1000</Points>
-        <ChevronDefault icon="chevron-default" width="24" height="24" alt="show more" />
+        <ChevronDefault icon="chevron-default" width="24" height="24" />
       </PresentationalBit>
     </Wrapper>
   )
@@ -34,6 +34,7 @@ const Points = styled.span`
   background: ${brandGradient};
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   margin-left: 8px;
 `
 
