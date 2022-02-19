@@ -1,10 +1,23 @@
 import styled from "styled-components"
 import singleWavePatternImg from "src/assets/images/single-wave-pattern.svg"
 import heroDesktopImg from "src/assets/images/hero-desktop.png"
+import walkthoughtImg1 from "src/assets/images/walkthroug-1-desktop.png"
+import walkthoughtImg2 from "src/assets/images/walkthroug-2-desktop.png"
+import walkthoughtImg3 from "src/assets/images/walkthroug-3-desktop.png"
 import { L1 } from "src/components/modules/Desktop/Text"
-import { l1 as headingsL1Default } from "src/styles/constants/desktop/titles"
-import { l1AllCaps } from "src/styles/constants/desktop/texts"
-import { neutral600, brandGradient, sectionBg } from "src/styles/constants/colors"
+import {
+  l1 as headingsL1Default,
+  l3 as headingL3Default,
+} from "src/styles/constants/desktop/titles"
+import { l1AllCaps, l1 as textL1Default } from "src/styles/constants/desktop/texts"
+import {
+  neutral600,
+  brandGradient,
+  sectionBg,
+  neutral0,
+  illustrationBg,
+  lightBrandPrimary,
+} from "src/styles/constants/colors"
 import { cssPropertiesToString } from "src/utils/cssPropertiesToString"
 import Button from "src/components/common/Button"
 import Icon from "src/components/common/Icon"
@@ -35,7 +48,46 @@ const Hero = () => {
           <HeroImage src={heroDesktopImg.src} alt="Image" width="897" height="795" />
         </HeroImageContainer>
       </Container>
-      <WaltkthroughSection>a</WaltkthroughSection>
+      <WaltkthroughSection>
+        <WaltkthroughList>
+          <li>
+            <div className="top-card">
+              <img src={walkthoughtImg1.src} alt="" />
+            </div>
+            <footer className="bottom-card">
+              <BottomCardTitle>
+                <IconWrapper icon="walkthrough-1" />
+                <h2>1&#8212;BROWSE</h2>
+              </BottomCardTitle>
+              <p>Browse our tech catalog with more than 20 top tech products</p>
+            </footer>
+          </li>
+          <li>
+            <div className="top-card">
+              <img src={walkthoughtImg2.src} alt="" />
+            </div>
+            <footer className="bottom-card">
+              <BottomCardTitle>
+                <IconWrapper icon="walkthrough-2" />
+                <h2>2&#8212;CHOOSE</h2>
+              </BottomCardTitle>
+              <p>Exchange your hard earned AeroPoints for the item you want</p>
+            </footer>
+          </li>
+          <li>
+            <div className="top-card">
+              <img src={walkthoughtImg3.src} alt="" />
+            </div>
+            <footer className="bottom-card">
+              <BottomCardTitle>
+                <IconWrapper icon="walkthrough-3" />
+                <h2>3&#8212;ENJOY</h2>
+              </BottomCardTitle>
+              <p>All done, you can relax! We’ll take care of delivery of your tech item!</p>
+            </footer>
+          </li>
+        </WaltkthroughList>
+      </WaltkthroughSection>
     </Wrapper>
   )
 }
@@ -101,4 +153,81 @@ const WaltkthroughSection = styled.section`
   background: ${sectionBg};
   margin-top: 228px;
   height: 528px;
+  position: relative;
+`
+
+const WaltkthroughList = styled.ol`
+  display: flex;
+  max-width: 1464px;
+  margin: 0 auto;
+  height: 680px;
+  list-style: none;
+  li {
+    position: absolute;
+    background-color: ${neutral0};
+    padding: 12px;
+    width: 508px;
+    border: 1px solid #dae4f2;
+    border-radius: 32px;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.05);
+    .top-card {
+      width: 100%;
+      background: ${illustrationBg};
+      border-radius: 24px 24px 0px 0px;
+      img {
+        width: 100%;
+      }
+    }
+    .bottom-card {
+      border-radius: 0px 0px 24px 24px;
+      border: 1px solid #dae4f2;
+      padding: 16px 24px 24px;
+
+      p {
+        margin: 0;
+        ${cssPropertiesToString(textL1Default)};
+        color: ${neutral600};
+        max-width: 372px;
+      }
+    }
+    &:nth-child(1) {
+      transform: rotate(-3deg);
+      z-index: 1;
+      top: -45.84px;
+      right: 1125px;
+    }
+    &:nth-child(2) {
+      z-index: 2;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:last-child {
+      z-index: 3;
+      transform: rotate(3deg);
+      top: -45.84px;
+      left: 1125px;
+    }
+  }
+`
+const IconWrapper = styled(Icon)`
+  background-color: ${lightBrandPrimary};
+  padding: 4px;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+`
+const BottomCardTitle = styled.div`
+  display: flex;
+  align-items: center;
+  h2 {
+    margin: 0;
+    background: ${brandGradient};
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    ${cssPropertiesToString(headingL3Default)}
+    margin-left: 14px;
+    text-transform: uppercase;
+  }
 `
