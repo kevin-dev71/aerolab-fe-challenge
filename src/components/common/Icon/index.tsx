@@ -16,16 +16,21 @@ interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   icon: IconsType
 }
 
-const icons: Record<IconsType, string> = {
-  "aero-pay": AeroPayImg1Url.src,
-  "chevron-default": ChevronDefaultUrl.src,
-  "arrow-down": ArrowDown.src,
-  "walkthrough-1": Walkthrough1.src,
-  "walkthrough-2": Walkthrough2.src,
-  "walkthrough-3": Walkthrough3.src,
+const icons: Record<IconsType, React.FC<React.SVGProps<SVGSVGElement>>> = {
+  "aero-pay": AeroPayImg1Url,
+  "chevron-default": ChevronDefaultUrl,
+  "arrow-down": ArrowDown,
+  "walkthrough-1": Walkthrough1,
+  "walkthrough-2": Walkthrough2,
+  "walkthrough-3": Walkthrough3,
 }
 
 const Icon: React.FC<Props> = ({ icon, ...props }) => {
-  return <img src={icons[icon]} alt={icon} {...props} />
+  const Component = icons[icon]
+
+  if (!Component) {
+    throw new Error(`No icon found: ${icon}`)
+  }
+  return <Component />
 }
 export default Icon
