@@ -1,10 +1,11 @@
-import AeroPayImg1Url from "src/assets/icons/aeropay-1.svg"
-import ChevronDefaultUrl from "src/assets/icons/chevron-default.svg"
-import ArrowDown from "src/assets/icons/arrow-down.svg"
-import Walkthrough1 from "src/assets/icons/walkthrough-1.svg"
-import Walkthrough2 from "src/assets/icons/walkthrough-2.svg"
-import Walkthrough3 from "src/assets/icons/walkthrough-3.svg"
 import React from "react"
+import AeroPayImg1Url from "@icons/aeropay-1.svg"
+import ChevronDefaultUrl from "@icons/chevron-default.svg"
+import ArrowDown from "@icons/arrow-down.svg"
+import Walkthrough1 from "@icons/walkthrough-1.svg"
+import Walkthrough2 from "@icons/walkthrough-2.svg"
+import Walkthrough3 from "@icons/walkthrough-3.svg"
+import SelectArrow from "@icons/select-arrow.svg"
 
 type IconsType =
   | "aero-pay"
@@ -13,6 +14,7 @@ type IconsType =
   | "walkthrough-1"
   | "walkthrough-2"
   | "walkthrough-3"
+  | "select-arrow"
 interface Props {
   icon: IconsType
   width?: string
@@ -27,6 +29,7 @@ const icons: Record<IconsType, React.FC<React.SVGProps<SVGSVGElement>>> = {
   "walkthrough-1": Walkthrough1,
   "walkthrough-2": Walkthrough2,
   "walkthrough-3": Walkthrough3,
+  "select-arrow": SelectArrow,
 }
 
 const Icon: React.FC<Props> = ({ icon, ...props }) => {
