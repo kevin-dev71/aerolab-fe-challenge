@@ -14,7 +14,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@colors": ["src/styles/constants/colors.ts"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@texts/desktop": ["src/styles/constants/desktop/texts.ts"],
+      "@titles/desktop": ["src/styles/constants/desktop/titles.ts"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
