@@ -15,7 +15,7 @@ type IconsType =
   | "walkthrough-2"
   | "walkthrough-3"
   | "select-arrow"
-interface Props {
+interface Props extends React.HTMLProps<HTMLOrSVGImageElement> {
   icon: IconsType
   width?: string
   height?: string
@@ -32,12 +32,12 @@ const icons: Record<IconsType, React.FC<React.SVGProps<SVGSVGElement>>> = {
   "select-arrow": SelectArrow,
 }
 
-const Icon: React.FC<Props> = ({ icon, ...props }) => {
-  const Component = icons[icon]
+const Icon: React.FC<Props> = ({ icon, className, ...props }) => {
+  const Component: any = icons[icon]
 
   if (!Component) {
     throw new Error(`No icon found: ${icon}`)
   }
-  return <Component {...props} />
+  return <Component className={className} {...props} />
 }
 export default Icon

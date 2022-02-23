@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: "default"
 }
 
-const Button: React.FC<Props> = ({ className, children, variant = "default" }) => {
+const Button: React.FC<Props> = ({ className, children }) => {
   return <ButtonElem className={className}>{children}</ButtonElem>
 }
 export default Button

@@ -1,8 +1,12 @@
 import styled from "styled-components"
 import { l2 as headingsL2Default } from "src/styles/constants/desktop/titles"
+import { l1 as textL1Default } from "@texts/desktop"
+import { neutral600, neutral300 } from "@colors"
 import { cssPropertiesToString } from "src/utils/cssPropertiesToString"
 import Select from "src/components/common/Select"
-import { useState } from "react"
+import React, { useState } from "react"
+import SortSelectorBTN from "src/components/common/SortSelectorBTN"
+import PagerPill from "src/components/common/PagerPill"
 
 const filterByOptions = [
   {
@@ -39,8 +43,15 @@ const filterByOptions = [
   },
 ]
 
+enum SortBy {
+  MOST_RECENT = "Most Recent",
+  LOWEST_PRICE = "Lowest Price",
+  HIGHEST_PRICE = "Highest Price",
+}
+
 const ProductsSection = () => {
-  const [selectValue, setSelectValue] = useState(filterByOptions[0].value)
+  const [selectValue, setSelectValue] = useState<string>(filterByOptions[0].value)
+  const [sortByValue, setSortByValue] = useState<SortBy | undefined>(undefined)
 
   return (
     <ProductsSectionWrapper>
@@ -48,17 +59,35 @@ const ProductsSection = () => {
         <span>TECH </span>PRODUCTS
       </Title>
       <FilterOptions>
+        <label style={{ marginRight: "16px" }} htmlFor="filter">
+          Filter by:
+        </label>
         <Select
-          label="Filter By: "
           value={selectValue}
-          onChange={(ev: React.ChangeEvent<HTMLSelectElement>) => setSelectValue(ev.target.value)}
+          onChange={(ev: React.ChangeEvent<HTMLSelectElement>) => {
+            setSelectValue(ev.target.value)
+          }}
+          label="filter"
         >
-          {filterByOptions.map(({ value, label }) => (
-            <option key={value} value={value}>
-              {label}
+          {filterByOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
             </option>
           ))}
         </Select>
+        <SortOptionsWrapper>
+          <label htmlFor="">Sort by:</label>
+          {Object.values(SortBy).map((sortBy) => (
+            <SortSelectorBTN
+              key={sortBy}
+              isSelected={sortByValue === sortBy}
+              onClick={() => setSortByValue(sortBy)}
+            >
+              {sortBy}
+            </SortSelectorBTN>
+          ))}
+        </SortOptionsWrapper>
+        <PagerPill />
       </FilterOptions>
     </ProductsSectionWrapper>
   )
@@ -83,4 +112,24 @@ const Title = styled.h2`
 `
 const FilterOptions = styled.div`
   display: flex;
+  align-items: center;
+  color: ${neutral600};
+  ${cssPropertiesToString(textL1Default)};
+  div:last-child {
+    margin-left: auto;
+  }
+`
+
+const SortOptionsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  &::before {
+    display: inline-block;
+    content: "";
+    border-right: 2px solid ${neutral300};
+    height: 3.65rem;
+    margin-left: 40px;
+    margin-right: calc(40px - 12px);
+  }
 `
