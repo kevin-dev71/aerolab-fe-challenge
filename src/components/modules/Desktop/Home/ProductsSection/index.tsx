@@ -7,6 +7,8 @@ import Select from "src/components/common/Select"
 import React, { useState } from "react"
 import SortSelectorBTN from "src/components/common/SortSelectorBTN"
 import PagerPill from "src/components/common/PagerPill"
+import ProductList from "src/components/modules/Desktop/Home/ProductsSection/ProductList"
+import type { ProductType } from "src/types/product"
 
 const filterByOptions = [
   {
@@ -49,7 +51,7 @@ enum SortBy {
   HIGHEST_PRICE = "Highest Price",
 }
 
-const ProductsSection = () => {
+const ProductsSection = ({ products }: { products: ProductType[] }) => {
   const [selectValue, setSelectValue] = useState<string>(filterByOptions[0].value)
   const [sortByValue, setSortByValue] = useState<SortBy | undefined>(undefined)
 
@@ -89,6 +91,7 @@ const ProductsSection = () => {
         </SortOptionsWrapper>
         <PagerPill />
       </FilterOptions>
+      <ProductList products={products} />
     </ProductsSectionWrapper>
   )
 }
