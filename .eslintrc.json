@@ -19,6 +19,8 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "quotes": [2, "double", { "avoidEscape": true }],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }
