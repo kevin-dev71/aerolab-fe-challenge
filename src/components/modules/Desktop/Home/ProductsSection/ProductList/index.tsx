@@ -14,4 +14,8 @@ const ProductList = ({ products }: { products: ProductType[] }) => {
 
 export default ProductList
 
-const Wrapper = styled.section``
+const Wrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
