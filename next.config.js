@@ -4,12 +4,9 @@ const nextConfig = {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
-
-module.exports = {
+  images: {
+    domains: ["coding-challenge-api.aerolab.co"],
+  },
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push(
@@ -26,3 +23,5 @@ module.exports = {
     return config
   },
 }
+
+module.exports = nextConfig
