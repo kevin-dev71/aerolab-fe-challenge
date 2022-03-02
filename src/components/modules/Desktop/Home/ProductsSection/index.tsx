@@ -9,6 +9,7 @@ import SortSelectorBTN from "src/components/common/SortSelectorBTN"
 import PagerPill from "src/components/common/PagerPill"
 import ProductList from "src/components/modules/Desktop/Home/ProductsSection/ProductList"
 import type { ProductType } from "src/types/product"
+import usePagination from "src/hooks/usePagination"
 
 const filterByOptions = [
   {
@@ -54,6 +55,7 @@ enum SortBy {
 const ProductsSection = ({ products }: { products: ProductType[] }) => {
   const [selectValue, setSelectValue] = useState<string>(filterByOptions[0].value)
   const [sortByValue, setSortByValue] = useState<SortBy | undefined>(undefined)
+  const { content, currentPage, maxPage, next, prev } = usePagination(products)
 
   return (
     <ProductsSectionWrapper>
@@ -89,9 +91,15 @@ const ProductsSection = ({ products }: { products: ProductType[] }) => {
             </SortSelectorBTN>
           ))}
         </SortOptionsWrapper>
-        <PagerPill />
+        <PagerPill currentPage={currentPage} maxPage={maxPage} next={next} prev={prev} />
       </FilterOptions>
-      <ProductList products={products} />
+      <ProductList
+        products={content}
+        currentPage={currentPage}
+        maxPage={maxPage}
+        next={next}
+        prev={prev}
+      />
     </ProductsSectionWrapper>
   )
 }

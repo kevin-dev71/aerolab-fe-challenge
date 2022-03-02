@@ -2,14 +2,24 @@ import styled from "styled-components"
 import { neutral300, brandGradient } from "@colors"
 import Button from "src/components/common/PagerPill/PagerPill.Button"
 
-const PagerPill = () => {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  currentPage: number
+  maxPage: number
+  next: () => void
+  prev: () => void
+}
+
+const PagerPill: React.FC<Props> = ({ currentPage, maxPage, next, prev, ...props }) => {
   return (
-    <PagerPillWrapper>
-      <Button disabled backButton />
+    <PagerPillWrapper {...props}>
+      <Button disabled backButton onClick={prev} />
       <PageText>
-        Page <span>1 of 2</span>
+        Page{" "}
+        <span>
+          {currentPage} of {maxPage}
+        </span>
       </PageText>
-      <Button />
+      <Button onClick={next} />
     </PagerPillWrapper>
   )
 }

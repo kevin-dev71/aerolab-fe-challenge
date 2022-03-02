@@ -6,9 +6,13 @@ interface Props extends React.HTMLProps<HTMLButtonElement> {
   backButton?: boolean
 }
 
-const Button: React.FC<Props> = ({ disabled, backButton = false }) => {
+const Button: React.FC<Props> = ({ disabled, backButton = false, onClick }) => {
   return (
-    <ButtonWrapper disabled={disabled} color={disabled ? neutral200 : lightBrandPrimary}>
+    <ButtonWrapper
+      disabled={disabled}
+      color={disabled ? neutral200 : lightBrandPrimary}
+      onClick={onClick}
+    >
       <ChevronDefault
         style={
           {
