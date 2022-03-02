@@ -1,5 +1,6 @@
 import React from "react"
 import AeroPayImg1Url from "@icons/aeropay-1.svg"
+import AeroPay3Img1Url from "@icons/aeropay-3.svg"
 import ChevronDefaultUrl from "@icons/chevron-default.svg"
 import ArrowDown from "@icons/arrow-down.svg"
 import Walkthrough1 from "@icons/walkthrough-1.svg"
@@ -9,6 +10,7 @@ import SelectArrow from "@icons/select-arrow.svg"
 
 type IconsType =
   | "aero-pay"
+  | "aeropay-3"
   | "chevron-default"
   | "arrow-down"
   | "walkthrough-1"
@@ -24,6 +26,7 @@ interface Props extends React.HTMLProps<HTMLOrSVGImageElement> {
 
 const icons: Record<IconsType, React.FC<React.SVGProps<SVGSVGElement>>> = {
   "aero-pay": AeroPayImg1Url,
+  "aeropay-3": AeroPay3Img1Url,
   "chevron-default": ChevronDefaultUrl,
   "arrow-down": ArrowDown,
   "walkthrough-1": Walkthrough1,
