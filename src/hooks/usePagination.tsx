@@ -11,7 +11,6 @@ function usePagination<T>(data: T[] = [], itemsPerPage: number = 16) {
   }
 
   function next() {
-    console.log("ho;a")
     setCurrentPage((currentPage) => Math.min(currentPage + 1, maxPage))
   }
 
